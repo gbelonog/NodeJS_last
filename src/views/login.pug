@@ -1,0 +1,14 @@
+doctype html
+html(lang='en')
+include _partials/head.pug
++head('Login')
+body
+  include _partials/header.pug
+  form(action='/login', method='POST')
+    p
+      | login: 
+      input(type='text', name='login', value='')
+      |          password: 
+      input(type='text', name='password', value='')
+    input(type='submit', value='Submit')
+include _partials/footer.pug
