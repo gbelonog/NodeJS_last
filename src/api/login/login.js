@@ -1,12 +1,15 @@
 const { Router } = require('express');
-const loginRouter = new Router();
 const cookieParser = require('cookie-parser');
 const { itemData } = require('../../../services');
 
+const loginRouter = new Router();
+
 loginRouter.use(cookieParser());
+
 loginRouter.get('/login', (req, res) => {
     res.render('login');
 });
+
 loginRouter.post('/login', async(req, res) => {
     let items = await itemData.getItem();
     const loginsArray = items.map(e => e.login == req.body.login);
@@ -18,4 +21,5 @@ loginRouter.post('/login', async(req, res) => {
         res.redirect('/login');
     }        
 });
+
 module.exports = loginRouter;

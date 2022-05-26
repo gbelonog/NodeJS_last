@@ -1,4 +1,3 @@
-//const apiRouter = require('./apiRouter');
 const { Router } = require('express');
 const chat = require('./chat/chat');
 const signup = require('./signup/signup');
